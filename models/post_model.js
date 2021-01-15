@@ -3,8 +3,8 @@ const mongoose = require("mongoose")
 const postSchema = new mongoose.Schema(
 	{
 		username: String,
-		profileImg: String,
-		postImg: String,
+		profileImage: String,
+		image: String,
 		caption: String,
 		likes: Number,
 	},

@@ -1,6 +1,6 @@
 const express = require("express")
 const home = express.Router()
-const User = require("../models/user_model.js")
+// const User = require("../models/user_model.js")
 const Post = require("../models/post_model.js")
 
 // const isAuthenticated = (req, res, next) => {
