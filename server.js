@@ -24,11 +24,11 @@ app.use(
 const homeController = require("./controllers/home_controller.js")
 app.use("/home", homeController)
 
-const userController = require("./controllers/user_controllers.js")
-app.use("/user", userController)
+// const userController = require("./controllers/user_controllers.js")
+// app.use("/user", userController)
 
-const sessionController = require("./controllers/sessions.js")
-app.use("/session", sessionController)
+// const sessionController = require("./controllers/sessions.js")
+// app.use("/session", sessionController)
 
 mongoose.connect(MONGODB_URI, {
 	useNewUrlParser: true,

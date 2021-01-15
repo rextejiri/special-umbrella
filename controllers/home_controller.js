@@ -3,13 +3,13 @@ const home = express.Router()
 const User = require("../models/user_model.js")
 const Post = require("../models/post_model.js")
 
-const isAuthenticated = (req, res, next) => {
-	if (req.session.currentUser) {
-		return next()
-	} else {
-		res.redirect("/session/new")
-	}
-}
+// const isAuthenticated = (req, res, next) => {
+// 	if (req.session.currentUser) {
+// 		return next()
+// 	} else {
+// 		res.redirect("/session/new")
+// 	}
+// }
 
 home.get("/", (req, res) => {
 	Post.find({}, (err, foundPost) => {
