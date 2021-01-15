@@ -12,6 +12,8 @@ app.use(express.json())
 app.use(express.static("public"))
 
 //add controllers
+const homeController = require("./controllers/home_controller.js")
+app.use("/home", homeController)
 
 mongoose.connect(MONGODB_URI, {
 	useNewUrlParser: true,
