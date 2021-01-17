@@ -43,7 +43,7 @@ mongoose.connection.on("error", (err) =>
 	)
 )
 mongoose.connection.on("connected", () =>
-	console.log("mongo connected: ", MONGODB_URI)
+	console.log("mongo connected: 🧞‍♂️🧞‍♂️🧞‍♂️", MONGODB_URI)
 )
 mongoose.connection.on("disconnected", () => console.log("mongo disconnected"))
 
@@ -57,5 +57,5 @@ app.get("/", (req, res) => {
 
 // LISTENER //
 app.listen(PORT, () => {
-	console.log("listening on port", PORT)
+	console.log("listening on port🧞‍🧞‍♂️🧞‍♂️🧞‍♂️♂️", PORT)
 })
