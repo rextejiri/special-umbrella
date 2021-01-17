@@ -42,7 +42,7 @@ home.put("/:id", (req, res) => {
 			if (err) {
 				res.send(err)
 			} else {
-				Post.find({}, (err, foundpost) => {
+				Post.find({}, (err, foundPost) => {
 					res.json(foundPost)
 				})
 			}
