@@ -55,7 +55,7 @@ class App extends React.Component {
 			<div className="main-container">
 				<header>
 					<div className="logo-div">
-						<img src="" alt="Besties" />
+						<img src="./images/logo.svg" alt="Besties" />
 					</div>
 					<div className="nav-div">
 						<img src="" alt="share"/>
