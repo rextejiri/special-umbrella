@@ -87,12 +87,10 @@ class App extends React.Component {
 									<img src={post.image} alt={post.username} />
 							</div>
 							<div className="like-bar">
-								<button>
-								Like
-								</button>
-								<button>
-								comment
-								</button>
+								<div className="likeButton">
+								<img src="./images/post.svg" />
+								</div>
+								
 								<button>
 								share
 								</button>
