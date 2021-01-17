@@ -29,6 +29,17 @@ class App extends React.Component {
 			})
 		})
 	}
+	updatePost = (event) => {
+		event.preventDefault()
+		const id = event.target.id
+		axios.put('/home/' + id, this.state).then((response) => {
+			this.setState({
+				posts: response.data,
+				caption: '',
+				image: '',
+			})
+		})
+	}
 
 	componentDidMount = () => {
 		axios.get('/home').then((response) => {
@@ -50,13 +61,27 @@ class App extends React.Component {
 						<img src="" alt="share"/>
 					</div>
 				</header>
+				<div className="loop">
 				{this.state.posts.map((post) => {
 					return (
 						<div key={post._id} className="post-container">
 							<div className="profile-div" >
-								<img src={post.profileImage} alt={post.name} />
-								<h5>Username</h5>
-								<button>Edit</button>
+								<img src={post.profileImage} alt="photo" />
+								<h5>{post.username}</h5>
+                  <form id={post._id} onSubmit={this.updatePost}>
+                    <label htmlFor="caption">caption</label>
+                    <br />
+                    <input type="text" id="caption" onChange={this.handleChange} />
+                    <label htmlFor="image">Image</label>
+                    <br />
+                    <input
+                      type="text"
+                      id="image"
+                      onChange={this.handleChange}
+                    />
+                    <br />
+                    <input type="submit" value="Update Post" />
+                  </form>
 							</div>
 							<div className="posted-image">
 									<img src={post.image} alt={post.username} />
@@ -75,10 +100,11 @@ class App extends React.Component {
 								Delete
 							</button>
 							</div>
+							<p>{post.caption}</p>
 						</div>
 					)
 				})}
-
+				</div>
 				<footer>
 					<form onSubmit={this.handleSubmit}>
 						<label htmlFor="caption">Caption</label>
