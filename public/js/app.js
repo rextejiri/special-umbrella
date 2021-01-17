@@ -55,10 +55,10 @@ class App extends React.Component {
 			<div className="main-container">
 				<header>
 					<div className="logo-div">
-						<img src="" alt="Besties" />
+						<img src="./images/logo.svg" alt="Besties" />
 					</div>
 					<div className="nav-div">
-						<img src="" alt="share"/>
+						<img src="./images/inboxIcon.svg" alt="share"/>
 					</div>
 				</header>
 				<div className="loop">
@@ -87,18 +87,19 @@ class App extends React.Component {
 									<img src={post.image} alt={post.username} />
 							</div>
 							<div className="like-bar">
-								<button>
-								Like
+								<div className="likeButton">
+								<img src="./images/likeIcon.svg" />
+								</div>
+								<div className="commentButton">
+								<img src="./images/commentIcon.svg" />
+								</div>
+								<div className="sendButton">
+								<img src="./images/sendIcon.svg" />
+								</div>
+								<button className="deleteButton" value={post._id} onClick={this.deletePost}>
+								<img src="./images/deleteIcon.svg" />
+								<p className="delete">Delete</p>
 								</button>
-								<button>
-								comment
-								</button>
-								<button>
-								share
-								</button>
-								<button value={post._id} onClick={this.deletePost}>
-								Delete
-							</button>
 							</div>
 							<p>{post.caption}</p>
 						</div>
@@ -123,12 +124,12 @@ class App extends React.Component {
 
 					</form>
 					<div className="footer-div">
-					<button>
-					Home
-					</button>
-					<button>
-					Create Post
-					</button>
+					<div className="homeButton">
+					<img src="./images/home.svg" />
+					</div>
+					<div className="createButton">
+					<img src="./images/create post.svg" />
+					</div>
 					</div>
 				</footer>
 			</div>
