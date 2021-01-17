@@ -29,7 +29,7 @@ class App extends React.Component {
 			})
 		})
 	}
-	
+
 	componentDidMount = () => {
 		axios.get('/home').then((response) => {
 			this.setState({
@@ -82,16 +82,16 @@ class App extends React.Component {
 				<footer>
 					<form onSubmit={this.handleSubmit}>
 						<label htmlFor="caption">Caption</label>
-						<input type="text" id="caption" onChange={this.handleChange}/>
+						<input type="text" id="caption" onChange={this.handleChange} value={this.state.caption}/>
 						<br />
 						<label htmlFor="image">Image</label>
-						<input type="text" id="image" onChange={this.handleChange}/>
+						<input type="text" id="image" onChange={this.handleChange} value={this.state.image}/>
 						<br />
 						<label htmlFor="profileImage">profileImage</label>
-						<input type="text" id="profileImage" onChange={this.handleChange}/>
+						<input type="text" id="profileImage" onChange={this.handleChange} value={this.state.profileImage}/>
 						<br />
 						<label htmlFor="username">Username</label>
-						<input type="text" id="username" onChange={this.handleChange}/>
+						<input type="text" id="username" onChange={this.handleChange} value={this.state.username}/>
 						<br />
 						<input type="submit" value="Post" />
 
