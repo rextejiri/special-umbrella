@@ -22,6 +22,21 @@ class App extends React.Component {
         this.setState({ posts: response.data, image: '', username: '' ,caption: "",profileImage: "", likes: ""})
       )
   }
+	deletePost = (event) => {
+		axios.delete('/home/' + event.target.value).then((response) => {
+			this.setState({
+				posts: response.data,
+			})
+		})
+	}
+	
+	componentDidMount = () => {
+		axios.get('/home').then((response) => {
+			this.setState({
+				posts: response.data,
+			})
+		})
+	}
 
 
 	render = () => {
@@ -37,11 +52,11 @@ class App extends React.Component {
 				</header>
 				{this.state.posts.map((post) => {
 					return (
-						<div className="post-container">
+						<div key={post._id} className="post-container">
 							<div className="profile-div" >
-									<img src="" alt="profile image"/>
-									<h5>Username</h5>
-									<img src={post.profileImage} alt={post.name} />
+								<img src={post.profileImage} alt={post.name} />
+								<h5>Username</h5>
+								<button>Edit</button>
 							</div>
 							<div className="posted-image">
 									<img src={post.image} alt={post.username} />
@@ -56,7 +71,7 @@ class App extends React.Component {
 								<button>
 								share
 								</button>
-								<button>
+								<button value={post._id} onClick={this.deletePost}>
 								Delete
 							</button>
 							</div>
