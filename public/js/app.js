@@ -22,6 +22,9 @@ class App extends React.Component {
         this.setState({ posts: response.data, image: '', username: '' ,caption: "",profileImage: "", likes: ""})
       )
   }
+
+
+
 	deletePost = (event) => {
 		axios.delete('/home/' + event.target.value).then((response) => {
 			this.setState({
@@ -41,6 +44,10 @@ class App extends React.Component {
 		})
 	}
 
+	// displayAnswer = () => {
+	//  document.querySelector(".answer").style.display ="block"
+	// }
+
 	componentDidMount = () => {
 		axios.get('/home').then((response) => {
 			this.setState({
@@ -55,18 +62,17 @@ class App extends React.Component {
 			<div className="main-container">
 				<header>
 					<div className="logo-div">
-						<img src="./images/logo.svg" alt="Besties" />
+						<img className="logo" src="./images/logo.svg" alt="Besties" />
 					</div>
 					<div className="nav-div">
-						<img src="./images/inboxIcon.svg" alt="share"/>
+						<img className="inbox" src="./images/inboxIcon.svg" alt="share"/>
 					</div>
 				</header>
-				<div className="loop">
 				{this.state.posts.map((post) => {
 					return (
 						<div key={post._id} className="post-container">
 							<div className="profile-div" >
-								<img src={post.profileImage} alt="photo" />
+								<img className="profile-image" src={post.profileImage} alt="photo" />
 								<h5>{post.username}</h5>
                   <form id={post._id} onSubmit={this.updatePost}>
                     <label htmlFor="caption">caption</label>
@@ -82,30 +88,33 @@ class App extends React.Component {
                     <br />
                     <input type="submit" value="Update Post" />
                   </form>
+									<div className="editButtton">
+										<img className="edit" src="./images/editIcon.svg" />
+									</div>
 							</div>
 							<div className="posted-image">
-									<img src={post.image} alt={post.username} />
+									<img className="image" src={post.image} alt={post.username} />
 							</div>
 							<div className="like-bar">
-								<div className="likeButton">
-								<img src="./images/likeIcon.svg" />
+								<div className="left-side-icons">
+									<div className="likeButton">
+										<img src="./images/likeIcon.svg" />
+									</div>
+									<div className="commentButton">
+										<img src="./images/commentIcon.svg" />
+									</div>
+									<div className="sendButton">
+										<img src="./images/sendIcon.svg" />
+									</div>
 								</div>
-								<div className="commentButton">
-								<img src="./images/commentIcon.svg" />
-								</div>
-								<div className="sendButton">
-								<img src="./images/sendIcon.svg" />
-								</div>
-								<button className="deleteButton" value={post._id} onClick={this.deletePost}>
-								<img src="./images/deleteIcon.svg" />
-								<p className="delete">Delete</p>
+								<button onMouseEnter={this.mouseOver} className="deleteButton" value={post._id} onClick={this.deletePost}>
+								<img src="./images/delete.svg" />
 								</button>
 							</div>
-							<p>{post.caption}</p>
+							<p className="caption">{post.username} {post.caption}</p>
 						</div>
 					)
 				})}
-				</div>
 				<footer>
 					<form onSubmit={this.handleSubmit}>
 						<label htmlFor="caption">Caption</label>
@@ -124,12 +133,12 @@ class App extends React.Component {
 
 					</form>
 					<div className="footer-div">
-					<div className="homeButton">
-					<img src="./images/home.svg" />
-					</div>
-					<div className="createButton">
-					<img src="./images/create post.svg" />
-					</div>
+						<div className="homeButton">
+							<img className="bottom-nav" src="./images/home.svg" />
+						</div>
+						<div className="createButton">
+							<img className="bottom-nav" src="./images/create post.svg" />
+						</div>
 					</div>
 				</footer>
 			</div>

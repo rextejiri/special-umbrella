@@ -10,6 +10,7 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  /* border: 1px solid pink; */
 }
 
 html, body{
@@ -20,4 +21,179 @@ html, body{
 body{
   background: var(--bodyBackground);
   color: var(--bodyTextColor);
+  /* margin: 1px solid pink; */
+
+}
+.main-container {
+  width: 100%;
+  height: 100%;
+  /* border: 2px solid blue; */
+}
+/* main {
+  height: 100%;
+  border: 2px solid yellow;
+} */
+.main-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  width: 100%;
+
+}
+header {
+  display: flex;
+  width: 100%;
+  height: 66px;
+  justify-content: space-between;
+  background-color: var(--headbackground);
+  filter: var(--dropShadow);
+}
+.logo-div, .nav-div {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-left: 24px;
+}
+.logo {
+  width: 104px;
+  height: 34px;
+}
+.inbox {
+  margin-right: 24px;
+  height: 28.4px;
+  width: 28.4px;
+
+
+}
+
+
+form {
+  display: none;
+}
+.post-container {
+  height: 557px;
+  width: 100%;
+  /* border: 2px solid red; */
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  margin-top: 30px;
+  justify-content: center;
+}
+.profile-div {
+  display: flex;
+  width: 100%;
+  height: 44px;
+  align-items: center;
+  justify-content: space-between;
+
+}
+.profile-image {
+  height: 42.03644943237305px;
+  width: 40px;
+  border-radius: 100%;
+  margin-left: 24px;
+  margin-right: 10px;
+}
+.edit{
+  height: 18.91640281677246px;
+  width: 4.564593315124512px;
+}
+.editButtton {
+  margin-right: 24px;
+}
+h5{
+  margin-right: auto;
+}
+.posted-image {
+  margin-top: 12px;
+  width: 100%;
+  height: 414px;
+  text-align: center;
+  /* border: 1px solid green; */
+  align-self: center;
+}
+.image{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.like-bar {
+  margin-top: 12px;
+  display: flex;
+  justify-content: space-between;
+}
+.left-side-icons {
+  margin-left: 24px;
+  width: 40%;
+  display: flex;
+  /* align-items: center; */
+  /* justify-content: space-between; */
+}
+.deleteButton {
+  margin-right: 24px;
+}
+.likeButton, .commentButton, .sendButton {
+  height: 24px;
+  width: 24px;
+  margin-right: 12px;
+}
+.commentButton {
+  margin-top: -6px;
+
+}
+.sendButton {
+  margin-left: 12px;
+  margin-top: -2px;
+}
+.caption{
+  margin-left: 24px;
+}
+
+footer {
+  height: 80px;
+  width: 100%;
+  /* left: 0px; */
+  /* top: 843px; */
+  /* border-radius: 0px; */
+  background-color: var(--bodyBackground);
+  filter: var(--dropShadow);
+  margin-top: 24px;
+}
+.footer-div {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.homeButton {
+  margin-left: 24px;
+  width: 35px;
+  height: 35px;
+}
+.createButton{
+  margin-right: 24px;
+  width: 35px;
+  height: 35px;
+}
+
+.bottom-nav{
+  height: 100%;
+  width: 100%;
+}
+.deleteButton{
+  border-color: transparent;
+  background-color: transparent;
+}
+.deleteButton:hover{
+  .delete{
+    display: contents;
+  }
+}
+.delete {
+  color: var(--bodyTextColor)
+  display: none;
 }
