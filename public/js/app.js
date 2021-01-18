@@ -61,12 +61,11 @@ class App extends React.Component {
 						<img className="inbox" src="./images/inboxIcon.svg" alt="share"/>
 					</div>
 				</header>
-				<div className="loop">
 				{this.state.posts.map((post) => {
 					return (
 						<div key={post._id} className="post-container">
 							<div className="profile-div" >
-								<img src={post.profileImage} alt="photo" />
+								<img className="profile-image" src={post.profileImage} alt="photo" />
 								<h5>{post.username}</h5>
                   <form id={post._id} onSubmit={this.updatePost}>
                     <label htmlFor="caption">caption</label>
@@ -82,9 +81,12 @@ class App extends React.Component {
                     <br />
                     <input type="submit" value="Update Post" />
                   </form>
+									<div className="editButtton">
+									<img className="edit" src="./images/editIcon.svg" />
+									</div>
 							</div>
 							<div className="posted-image">
-									<img src={post.image} alt={post.username} />
+									<img className="image" src={post.image} alt={post.username} />
 							</div>
 							<div className="like-bar">
 								<div className="likeButton">
@@ -105,7 +107,6 @@ class App extends React.Component {
 						</div>
 					)
 				})}
-				</div>
 				<footer>
 					<form onSubmit={this.handleSubmit}>
 						<label htmlFor="caption">Caption</label>

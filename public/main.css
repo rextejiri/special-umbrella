@@ -21,14 +21,18 @@ html, body{
 body{
   background: var(--bodyBackground);
   color: var(--bodyTextColor);
-  margin: 1px solid pink;
+  /* margin: 1px solid pink; */
 
 }
-.container, .main-container {
+.main-container {
   width: 100%;
   height: 100%;
-  border: 2px solid blue;
+  /* border: 2px solid blue; */
 }
+/* main {
+  height: 100%;
+  border: 2px solid yellow;
+} */
 .main-container {
   display: flex;
   flex-direction: column;
@@ -62,7 +66,56 @@ header {
 
 
 }
-img {
-  width: 300px;
-  height: 300px;
+
+
+form {
+  display: none;
+}
+.post-container {
+  height: 557px;
+  width: 100%;
+  /* border: 2px solid red; */
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  margin-top: 30px;
+}
+.profile-div {
+  display: flex;
+  width: 100%;
+  height: 44px;
+  align-items: center;
+  justify-content: space-between;
+
+}
+.profile-image {
+  height: 42.03644943237305px;
+  width: 40px;
+  border-radius: 100%;
+  margin-left: 24px;
+  margin-right: 4px;
+}
+.edit{
+  height: 18.91640281677246px;
+  width: 4.564593315124512px;
+}
+.editButtton {
+  margin-right: 24px;
+}
+h5{
+  margin-right: auto;
+}
+.posted-image {
+  margin-top: 4px;
+  width: 100%;
+  height: 414px;
+  text-align: center;
+}
+.image{
+  width: 100%;
+  height: 100%;
+  border-radius: 16px;
+}
+.like-bar {
+  display: flex;
 }
