@@ -22,6 +22,9 @@ class App extends React.Component {
         this.setState({ posts: response.data, image: '', username: '' ,caption: "",profileImage: "", likes: ""})
       )
   }
+
+
+
 	deletePost = (event) => {
 		axios.delete('/home/' + event.target.value).then((response) => {
 			this.setState({
@@ -40,6 +43,10 @@ class App extends React.Component {
 			})
 		})
 	}
+
+	// displayAnswer = () => {
+	//  document.querySelector(".answer").style.display ="block"
+	// }
 
 	componentDidMount = () => {
 		axios.get('/home').then((response) => {
@@ -82,7 +89,7 @@ class App extends React.Component {
                     <input type="submit" value="Update Post" />
                   </form>
 									<div className="editButtton">
-									<img className="edit" src="./images/editIcon.svg" />
+										<img className="edit" src="./images/editIcon.svg" />
 									</div>
 							</div>
 							<div className="posted-image">
@@ -91,18 +98,17 @@ class App extends React.Component {
 							<div className="like-bar">
 								<div className="left-side-icons">
 									<div className="likeButton">
-									<img src="./images/likeIcon.svg" />
+										<img src="./images/likeIcon.svg" />
 									</div>
 									<div className="commentButton">
-									<img src="./images/commentIcon.svg" />
+										<img src="./images/commentIcon.svg" />
 									</div>
 									<div className="sendButton">
-									<img src="./images/sendIcon.svg" />
+										<img src="./images/sendIcon.svg" />
 									</div>
 								</div>
-								<button className="deleteButton" value={post._id} onClick={this.deletePost}>
-								<img src="./images/deleteIcon.svg" />
-								<p className="delete">Delete</p>
+								<button onMouseEnter={this.mouseOver} className="deleteButton" value={post._id} onClick={this.deletePost}>
+								<img src="./images/delete.svg" />
 								</button>
 							</div>
 							<p className="caption">{post.username} {post.caption}</p>
@@ -127,12 +133,12 @@ class App extends React.Component {
 
 					</form>
 					<div className="footer-div">
-					<div className="homeButton">
-					<img src="./images/home.svg" />
-					</div>
-					<div className="createButton">
-					<img src="./images/create post.svg" />
-					</div>
+						<div className="homeButton">
+							<img className="bottom-nav" src="./images/home.svg" />
+						</div>
+						<div className="createButton">
+							<img className="bottom-nav" src="./images/create post.svg" />
+						</div>
 					</div>
 				</footer>
 			</div>

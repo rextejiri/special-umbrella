@@ -48,7 +48,7 @@ header {
   height: 66px;
   justify-content: space-between;
   background-color: var(--headbackground);
-  filter: var(--dropShadow)
+  filter: var(--dropShadow);
 }
 .logo-div, .nav-div {
   display: flex;
@@ -81,7 +81,6 @@ form {
   box-sizing: border-box;
   margin-top: 30px;
   justify-content: center;
-  margin: 0 auto;
 }
 .profile-div {
   display: flex;
@@ -151,4 +150,50 @@ h5{
 }
 .caption{
   margin-left: 24px;
+}
+
+footer {
+  height: 80px;
+  width: 100%;
+  /* left: 0px; */
+  /* top: 843px; */
+  /* border-radius: 0px; */
+  background-color: var(--bodyBackground);
+  filter: var(--dropShadow);
+  margin-top: 24px;
+}
+.footer-div {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.homeButton {
+  margin-left: 24px;
+  width: 35px;
+  height: 35px;
+}
+.createButton{
+  margin-right: 24px;
+  width: 35px;
+  height: 35px;
+}
+
+.bottom-nav{
+  height: 100%;
+  width: 100%;
+}
+.deleteButton{
+  border-color: transparent;
+  background-color: transparent;
+}
+.deleteButton:hover{
+  .delete{
+    display: contents;
+  }
+}
+.delete {
+  color: var(--bodyTextColor)
+  display: none;
 }
