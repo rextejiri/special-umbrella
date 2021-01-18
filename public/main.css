@@ -47,7 +47,8 @@ header {
   width: 100%;
   height: 66px;
   justify-content: space-between;
-  background-color: var(--headbackground)
+  background-color: var(--headbackground);
+  filter: var(--dropShadow)
 }
 .logo-div, .nav-div {
   display: flex;
@@ -79,6 +80,8 @@ form {
   flex-direction: column;
   box-sizing: border-box;
   margin-top: 30px;
+  justify-content: center;
+  margin: 0 auto;
 }
 .profile-div {
   display: flex;
@@ -93,7 +96,7 @@ form {
   width: 40px;
   border-radius: 100%;
   margin-left: 24px;
-  margin-right: 4px;
+  margin-right: 10px;
 }
 .edit{
   height: 18.91640281677246px;
@@ -106,16 +109,46 @@ h5{
   margin-right: auto;
 }
 .posted-image {
-  margin-top: 4px;
+  margin-top: 12px;
   width: 100%;
   height: 414px;
   text-align: center;
+  /* border: 1px solid green; */
+  align-self: center;
 }
 .image{
   width: 100%;
   height: 100%;
-  border-radius: 16px;
+  object-fit: cover;
 }
 .like-bar {
+  margin-top: 12px;
   display: flex;
+  justify-content: space-between;
+}
+.left-side-icons {
+  margin-left: 24px;
+  width: 40%;
+  display: flex;
+  /* align-items: center; */
+  /* justify-content: space-between; */
+}
+.deleteButton {
+  margin-right: 24px;
+}
+.likeButton, .commentButton, .sendButton {
+  height: 24px;
+  width: 24px;
+  margin-right: 12px;
+}
+.commentButton {
+  margin-top: -6px;
+
+}
+.sendButton {
+  margin-left: 12px;
+  margin-top: -2px;
+}
+.caption{
+  margin-left: 24px;
 }

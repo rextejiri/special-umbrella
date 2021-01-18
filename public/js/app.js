@@ -89,21 +89,23 @@ class App extends React.Component {
 									<img className="image" src={post.image} alt={post.username} />
 							</div>
 							<div className="like-bar">
-								<div className="likeButton">
-								<img src="./images/likeIcon.svg" />
-								</div>
-								<div className="commentButton">
-								<img src="./images/commentIcon.svg" />
-								</div>
-								<div className="sendButton">
-								<img src="./images/sendIcon.svg" />
+								<div className="left-side-icons">
+									<div className="likeButton">
+									<img src="./images/likeIcon.svg" />
+									</div>
+									<div className="commentButton">
+									<img src="./images/commentIcon.svg" />
+									</div>
+									<div className="sendButton">
+									<img src="./images/sendIcon.svg" />
+									</div>
 								</div>
 								<button className="deleteButton" value={post._id} onClick={this.deletePost}>
 								<img src="./images/deleteIcon.svg" />
 								<p className="delete">Delete</p>
 								</button>
 							</div>
-							<p>{post.caption}</p>
+							<p className="caption">{post.username} {post.caption}</p>
 						</div>
 					)
 				})}
