@@ -55,10 +55,10 @@ class App extends React.Component {
 			<div className="main-container">
 				<header>
 					<div className="logo-div">
-						<img src="./images/logo.svg" alt="Besties" />
+						<img className="logo" src="./images/logo.svg" alt="Besties" />
 					</div>
 					<div className="nav-div">
-						<img src="./images/inboxIcon.svg" alt="share"/>
+						<img className="inbox" src="./images/inboxIcon.svg" alt="share"/>
 					</div>
 				</header>
 				<div className="loop">
